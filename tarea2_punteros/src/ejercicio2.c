@@ -1,46 +1,50 @@
 #include <stdio.h>
 #include <math.h>
 
-// main function
-int main(){     
-    // definición de variables
-    double lado_A, lado_B, lado_C, semip_p, area;
-    //Lectura de datos
-    printf("Ingrese el valor del lado A(cm): ");
-    scanf("%lf", &lado_A);
 
-    printf("Ingrese el valor del lado B(cm): ");
-    scanf("%lf", &lado_B);
+int main(){
 
-    printf("Ingrese el valor del lado C(cm): ");
-    scanf("%lf", &lado_C);
+    float lado_a, lado_b, lado_c, semip_p, area;
+    int datos_correctos= 0;
 
-    // verificación de los lados lado_A, lado_B, lado_C
-    while ((lado_A + lado_B) <= lado_C || (lado_A + lado_C) <= lado_B || (lado_B + lado_C) <= lado_A){
-        printf("Ingrese los lados nuevamente\n");
+
+    while(datos_correctos == 0){
+        
         printf("Ingrese el valor del lado A(cm): ");
-        scanf("%lf", &lado_A);
+        scanf("%f", &lado_a);
 
         printf("Ingrese el valor del lado B(cm): ");
-        scanf("%lf", &lado_B);
-        if(lado_A <= 0 || lado_B <= 0 || lado_C <= 0){
-            printf("Los lados deben ser mayores a cero, v\n");
-            return 1;
-        }
+        scanf("%f", &lado_b);
+
         printf("Ingrese el valor del lado C(cm): ");
-        scanf("%lf", &lado_C);
+        scanf("%f", &lado_c);
+
+        //Comprobación de la desigualdad triangular
+        if (lado_a + lado_b < lado_c || lado_b + lado_c < lado_a || lado_c + lado_a < lado_b){
+            printf("Los lados no cumplen con la desigualdad triangular\n");
+            printf("Vuelva a ingresar los datos\n");
+            datos_correctos = 0;
+        }
+        // Los lados de un triangulo deben ser mayores que 0
+        else if (lado_a <= 0 || lado_b <= 0 || lado_c <= 0){
+            printf("\nLos lados deben ser mayores a cero\n");
+            printf("Vuelva a ingresar los datos\n");
+            datos_correctos = 0;
+        }
+        else{
+            datos_correctos = 1;
+        }
+        
     }
-    
-    // calculo semiperimetro
-    semip_p = (lado_A + lado_B + lado_C) / 2.0;
 
-    // calculo area
-    area = sqrt(semip_p * (semip_p - lado_A)*(semip_p - lado_B)*(semip_p - lado_C));
-    
-    // impresion de resultados 
-    printf("El área del triángulo es : %lf cm^2\n",area);
+    // Calculo del semiperimetro
+    semip_p = (lado_a + lado_b + lado_c) / 2.0;
 
-    // terminacion del programa 
+    // Calculo del area
+    area = sqrt(semip_p * (semip_p - lado_a)*(semip_p - lado_b)*(semip_p - lado_c));
+    
+    printf("El area del triangulo es: %.2f cm^2\n", area);
+    
+
     return 0;
 }
-

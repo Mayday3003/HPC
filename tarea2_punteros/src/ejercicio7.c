@@ -74,8 +74,11 @@ void eliminarNodo(struct Nodo** cabeza, int valor) {
     }
 }
 
-// Función principal
 int main() {
+
+    //Ejemplo de uso
+
+    // Crear la cabeza de la lista
     struct Nodo* cabeza = NULL;
 
     // Insertar elementos al final

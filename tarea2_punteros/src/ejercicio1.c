@@ -1,23 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
+# include <stdio.h>
 
-int main() {
-    double* Celcius;
-    double Fahrenheit;
-    double Kelvin;
+float conversion_farenheit(float celsius){
+    return ((9.0 / 5.0) * celsius) + 32.0;
+}
 
-    Celcius = (double*)(malloc(sizeof(double)));
+float conversion_kelvin(float celsius){
+    return (celsius + 273.15);
+}
 
-    printf("Ingrese la temperatura en Celcius: \n");
-    scanf("%lf", Celcius); 
+int main(){
 
+    float temperatura_celsius, temperatura_farenheit, temperatura_kelvin;
 
-    Fahrenheit = (9.0/5)*(*Celcius) + 32;
-    printf("La temperatura en  Fahrenheit es %lf \n", Fahrenheit);
+    printf("Por favor ingrese una temperatura en Grados Celsius:\n");
+    scanf("%f", &temperatura_celsius);
 
-    Kelvin = *Celcius + 273.15;
-    printf("La temperatura en Kelvin es %lf \n", Kelvin);
+    temperatura_farenheit = conversion_farenheit(temperatura_celsius);
+    temperatura_kelvin = conversion_kelvin(temperatura_celsius);
 
-    free(Celcius);
+    printf("La temperatura ingresada fue de %.2f grados celsius. \nEn Grados Farenheit es: %.2f\nEn grados Kelvin es: %.2f\n",
+        temperatura_celsius, temperatura_farenheit, temperatura_kelvin);
+
     return 0;
 }

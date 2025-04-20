@@ -40,7 +40,7 @@ int main (){
 
     float res = calculadora('+', 5, 3);
     
-    printf("%.2lf", res);
+    printf("%.2f\n", res);
 
     return 0;
 }
