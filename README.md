@@ -2,7 +2,7 @@
 
 Este repositorio contiene la solución a un taller de punteros desarrollado como parte del curso de **Computación de Alto Desempeño** de la **Universidad de Medellín**. A través de una serie de ejercicios, se abordan conceptos clave como el uso de punteros, memoria dinámica, estructuras, manipulación de arreglos, y más. Además, se aplica una estructura organizada del proyecto y el uso de Makefiles para facilitar la compilación.
 
-*La carpeta de Ejercicios en clase no hace parte de la tarea, todo lo que hace parte de la segunda tarea del curso de HPC está dentro de la carpeta "tarea2_punteros" *
+*La carpeta de Ejercicios en clase no hace parte de la tarea, todo lo que hace parte de la segunda tarea del curso de HPC está dentro de la carpeta "tarea2_punteros"*
 
 ## Estructura del Proyecto
 
