@@ -11,7 +11,6 @@ tarea2_punteros/
 ├── bin/                # Archivos binarios compilados 
 ├── src/                # Archivos fuente .c (ejercicio1.c, ejercicio2.c, ...)
 ├── Makefile            # Automatiza la compilación
-└── README.md            
 ```
 
 ## Ejercicios
